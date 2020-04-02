@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
         return formatter
     }()
     
-    var item: Item!
+    //var item: Item!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,4 +31,19 @@ class DetailViewController: UIViewController {
         descField.text = item.desc
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // save changes
+        item.name = nameField.text ?? ""
+        item.desc = descField.text  ?? ""
+        item.urgency = urgencyField.text ?? ""
+    }
+    
+    var item: Item! {
+        didSet {
+            navigationItem.title = item.name
+        }
+    }
+
 }
