@@ -22,18 +22,12 @@ class ItemsViewController: UITableViewController {
            }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton) {
-            if isEditing {
-                // show editing mode
-                sender.setTitle("Edit", for: .normal)
-                // turn off editing mode
-                setEditing(false, animated: true)
-            } else {
-                // end editing mode
-                sender.setTitle("Done", for: .normal)
-                // enter editing mode
-                setEditing(true, animated: true)
-            }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
     }
     
     
@@ -78,6 +72,24 @@ class ItemsViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        // If the table view is asking to commit a delete command...
+        if editingStyle == .delete {
+            let item = itemStore.allItems[indexPath.row]
+            // Remove the item from the store
+            itemStore.removeItem(item)
+            // Also remove that row from the table view with an animation
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
 
 }
 
