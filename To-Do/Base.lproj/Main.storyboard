@@ -121,11 +121,21 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lx-j5-qnN">
-                                        <rect key="frame" x="0.0" y="126" width="414" height="632"/>
+                                        <rect key="frame" x="0.0" y="126" width="414" height="580"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NP-W4-a1T">
+                                        <rect key="frame" x="0.0" y="714" width="414" height="44"/>
+                                        <items>
+                                            <barButtonItem systemItem="trash" id="qdB-lv-f9I">
+                                                <connections>
+                                                    <action selector="trashButtonPressed:" destination="SsO-hG-tdk" id="Irg-bd-dcO"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="UYR-TS-1QK" firstAttribute="leading" secondItem="vCr-6K-yi9" secondAttribute="leading" id="SfZ-HX-uAo"/>
@@ -146,8 +156,10 @@
                     <navigationItem key="navigationItem" id="mXv-Of-8e2"/>
                     <connections>
                         <outlet property="dateLabel" destination="3lx-j5-qnN" id="jv6-2h-0rR"/>
+                        <outlet property="deleteButton" destination="qdB-lv-f9I" id="SaD-Zc-p9O"/>
                         <outlet property="descField" destination="BlS-a4-Rc8" id="VQm-9H-vZt"/>
                         <outlet property="nameField" destination="UYR-TS-1QK" id="OdQ-X1-EKd"/>
+                        <outlet property="trashButton" destination="qdB-lv-f9I" id="JbI-BO-hrz"/>
                         <outlet property="urgencyField" destination="vCr-6K-yi9" id="BpP-w0-BHd"/>
                     </connections>
                 </viewController>

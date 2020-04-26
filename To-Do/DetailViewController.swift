@@ -45,5 +45,13 @@ class DetailViewController: UIViewController {
             navigationItem.title = item.name
         }
     }
-
+    
+    
+    @IBOutlet var trashButton: UIBarButtonItem!
+    
+    
+    @IBAction func trashButtonPressed(_ sender: Any) {
+        
+    }
+    
 }
