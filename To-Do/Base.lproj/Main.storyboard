@@ -156,7 +156,6 @@
                     <navigationItem key="navigationItem" id="mXv-Of-8e2"/>
                     <connections>
                         <outlet property="dateLabel" destination="3lx-j5-qnN" id="jv6-2h-0rR"/>
-                        <outlet property="deleteButton" destination="qdB-lv-f9I" id="SaD-Zc-p9O"/>
                         <outlet property="descField" destination="BlS-a4-Rc8" id="VQm-9H-vZt"/>
                         <outlet property="nameField" destination="UYR-TS-1QK" id="OdQ-X1-EKd"/>
                         <outlet property="trashButton" destination="qdB-lv-f9I" id="JbI-BO-hrz"/>
